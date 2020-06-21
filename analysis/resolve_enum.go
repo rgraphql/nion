@@ -7,7 +7,7 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/rgraphql/magellan/types"
-	proto "github.com/rgraphql/rgraphql/pkg/proto"
+	proto "github.com/rgraphql/rgraphql/pkg"
 )
 
 var stringTypeRef *ast.Named = &ast.Named{

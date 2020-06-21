@@ -10,7 +10,7 @@ import (
 	"github.com/rgraphql/nion/encoder"
 	qttestutil "github.com/rgraphql/nion/qtree/testutil"
 	"github.com/rgraphql/nion/resolver"
-	proto "github.com/rgraphql/rgraphql/pkg/proto"
+	proto "github.com/rgraphql/rgraphql"
 )
 
 // .\nion.exe analyze --schema ..\..\example\simple\schema.graphql --go-pkg "github.com/rgraphql/nion/example/simple" --go-query-type RootResolver --go-output "../../example/simple/resolve/resolve_generated.go"

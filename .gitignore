@@ -1,2 +1,3 @@
 *.exe
 cmd/nion/nion
+vendor/
