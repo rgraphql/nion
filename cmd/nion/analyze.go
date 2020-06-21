@@ -128,6 +128,7 @@ func runAnalyze(c *cli.Context) error {
 
 	fmt.Printf("Generated model successfully.\n")
 	var outDat bytes.Buffer
+	outDat.WriteString("//+build !nion_analyze\n\n")
 	outFile, err := model.GenerateResolverFile()
 	if err != nil {
 		return err

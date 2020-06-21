@@ -136,15 +136,17 @@ func (m *Model) GenerateResolverFile() (*gast.File, error) {
 	return &gast.File{
 		Name:    gast.NewIdent("resolve"),
 		Package: 5, // Force after build tag.
-		Comments: []*gast.CommentGroup{
-			&gast.CommentGroup{
-				List: []*gast.Comment{
-					&gast.Comment{
-						Text: "//+build !nion_analyze\n",
+		/*
+			Comments: []*gast.CommentGroup{
+				&gast.CommentGroup{
+					List: []*gast.Comment{
+						&gast.Comment{
+							Text: "//+build !nion_analyze",
+						},
 					},
 				},
 			},
-		},
+		*/
 		Decls: allDecls,
 	}, nil
 }

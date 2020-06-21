@@ -1,4 +1,5 @@
 //+build !nion_analyze
+
 package resolve
 
 import "context"
