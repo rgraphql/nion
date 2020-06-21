@@ -1,6 +1,6 @@
 The standard usage of this library:
 
- - Use nion tool to parse schema file, build/validate resolver tree
+ - Use magellan tool to parse schema file, build/validate resolver tree
  - Generate query model code to fit provided query structures on client
  - Generate execution model code to fit the provided resolvers to the model on server
  - Construct a session instance for each remote client
@@ -133,7 +133,7 @@ The analyzer tool uses the Go tools to observe the Go source and manage imports.
 The output of the analyzer tool would be:
 
 ```bash
-$ nion analyze --schema=schema.graphql --pkg github.com/myorg/myproj/resolver --resolver RootQuery=RootQueryResolver
+$ magellan analyze --schema=schema.graphql --pkg github.com/myorg/myproj/resolver --resolver RootQuery=RootQueryResolver
 Compiling analysis package...
 Executing analysis package...
 Schema RootQuery [object] to Go type struct RootQueryResolver
@@ -387,18 +387,18 @@ The above query schema could be re-written instead as a query object:
 ```go
 type MyQuery struct {
   // Mtx is the result mutex that is locked when updating the result in-place.
-  Mtx sync.Mutex `nion:",mutex"`
+  Mtx sync.Mutex `magellan:",mutex"`
   // AllPeople contains the list of all people returned.
-  AllPeople []*PersonNamesQuery `nion:"allPeople"`
+  AllPeople []*PersonNamesQuery `magellan:"allPeople"`
   // AllPeopleMtx can specifically lock the allpeople field.
-  AllPeopleMtx sync.Mutex `nion:"mutexFor="allPeople"`
+  AllPeopleMtx sync.Mutex `magellan:"mutexFor="allPeople"`
   // AllPeopleErr contains any error when resolving AllPeople
-  AllPeopleErr error `nion:",errorFor=allPeople"`
+  AllPeopleErr error `magellan:",errorFor=allPeople"`
 }
 
 type PersonNamesQuery struct {
   // Name is the name of the person.
-  Name string `nion:"name"`
+  Name string `magellan:"name"`
 }
 ```
 

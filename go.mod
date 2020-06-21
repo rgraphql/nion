@@ -1,4 +1,4 @@
-module github.com/rgraphql/nion
+module github.com/rgraphql/magellan
 
 go 1.14
 

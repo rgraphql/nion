@@ -7,11 +7,11 @@ import (
 	gtoken "go/token"
 	gtypes "go/types"
 
-	"github.com/rgraphql/nion/types/gqlast"
+	"github.com/rgraphql/magellan/types/gqlast"
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/pkg/errors"
-	"github.com/rgraphql/nion/util"
+	"github.com/rgraphql/magellan/util"
 )
 
 type funcArgField struct {

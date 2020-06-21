@@ -1,9 +1,9 @@
 package client
 
 import (
-	"github.com/rgraphql/nion/types"
-	"github.com/rgraphql/nion/types/gqlast"
-	"github.com/rgraphql/nion/varstore"
+	"github.com/rgraphql/magellan/types"
+	"github.com/rgraphql/magellan/types/gqlast"
+	"github.com/rgraphql/magellan/varstore"
 
 	"github.com/graphql-go/graphql/language/ast"
 	proto "github.com/rgraphql/rgraphql"

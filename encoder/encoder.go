@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/rgraphql/nion/resolver"
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/resolver"
+	"github.com/rgraphql/magellan/types"
 	pb "github.com/rgraphql/rgraphql"
 )
 

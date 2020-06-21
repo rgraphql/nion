@@ -1,10 +1,10 @@
-//+build !nion_analyze
+//+build !magellan_analyze
 
 package resolve
 
 import "context"
-import "github.com/rgraphql/nion/resolver"
-import "github.com/rgraphql/nion/example/simple"
+import "github.com/rgraphql/magellan/resolver"
+import "github.com/rgraphql/magellan/example/simple"
 
 func ResolvePerson(rctx *resolver.Context, r *simple.PersonResolver) {
 	if r == nil {
@@ -30,7 +30,30 @@ func ResolveRootQuery(rctx *resolver.Context, r *simple.RootResolver) {
 		rctx.WriteValue(resolver.BuildNullValue(), true)
 		return
 	}
-	fieldMap := map[uint32]resolver.FieldResolver{4063447360: func(rctx *resolver.Context) {
+	fieldMap := map[uint32]resolver.FieldResolver{3240268920: func(rctx *resolver.Context) {
+		ctx := rctx.Context
+		var vctx *resolver.Context
+		outCh := make(chan int)
+		go func() {
+			r.GetCounter(ctx, outCh)
+		}()
+		for {
+			select {
+			case <-ctx.Done():
+				return
+			case v := <-outCh:
+				if vctx != nil {
+					vctx.Purge()
+				}
+				vctx = rctx.VirtualChild()
+				rctx := vctx
+				v1 := (int32)(v)
+				resolver.ResolveValue(rctx, true, func() *resolver.Value {
+					return resolver.BuildIntValue(v1)
+				})
+			}
+		}
+	}, 4063447360: func(rctx *resolver.Context) {
 		ctx := rctx.Context
 		outCh := make(chan string)
 		errCh := make(chan error, 1)

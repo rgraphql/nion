@@ -2,7 +2,7 @@ package schema
 
 import (
 	"github.com/graphql-go/graphql/language/ast"
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/types"
 )
 
 type namedAstNode interface {

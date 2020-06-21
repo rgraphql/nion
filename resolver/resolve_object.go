@@ -1,8 +1,8 @@
 package resolver
 
 import (
-	"github.com/rgraphql/nion/qtree"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/qtree"
+	"github.com/rgraphql/magellan/schema"
 )
 
 // FieldResolver resolves a field on an object.

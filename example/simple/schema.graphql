@@ -1,5 +1,6 @@
 # RootQuery is the root query object.
 type RootQuery {
+    counter: Int
     names: [String]
     allPeople: [Person]
     singlePerson: Person

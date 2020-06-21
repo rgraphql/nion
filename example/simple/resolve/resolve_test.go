@@ -5,15 +5,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rgraphql/nion/example/simple"
+	"github.com/rgraphql/magellan/example/simple"
 
-	"github.com/rgraphql/nion/encoder"
-	qttestutil "github.com/rgraphql/nion/qtree/testutil"
-	"github.com/rgraphql/nion/resolver"
+	"github.com/rgraphql/magellan/encoder"
+	qttestutil "github.com/rgraphql/magellan/qtree/testutil"
+	"github.com/rgraphql/magellan/resolver"
 	proto "github.com/rgraphql/rgraphql"
 )
 
-// .\nion.exe analyze --schema ..\..\example\simple\schema.graphql --go-pkg "github.com/rgraphql/nion/example/simple" --go-query-type RootResolver --go-output "../../example/simple/resolve/resolve_generated.go"
+// .\magellan.exe analyze --schema ..\..\example\simple\schema.graphql --go-pkg "github.com/rgraphql/magellan/example/simple" --go-query-type RootResolver --go-output "../../example/simple/resolve/resolve_generated.go"
 func TestResolveSimple(t *testing.T) {
 	ctx, ctxCancel := context.WithTimeout(context.Background(), time.Second*30)
 	defer ctxCancel()
@@ -66,20 +66,22 @@ func TestResolveSimple(t *testing.T) {
 		},
 	})
 
-	go func() {
-		err := <-errCh
-		t.Fatal(err.GetError())
-	}()
-
+	// Until a go client is written, this is the best I can do.
 	encoder := encoder.NewResultEncoder(50)
 	outputCh := make(chan []byte)
+	doneCh := make(chan struct{})
+	var totalLen int
 	go func() {
 		for {
 			select {
 			case <-ctx.Done():
 				return
 			case dat := <-outputCh:
-				_ = dat
+				totalLen += len(dat)
+				t.Logf("[%v] output: %s", totalLen, string(dat))
+				if totalLen >= 106 {
+					doneCh <- struct{}{}
+				}
 			}
 		}
 	}()
@@ -87,5 +89,10 @@ func TestResolveSimple(t *testing.T) {
 
 	resolverCtx := resolver.NewContext(ctx, qtNode, encoder)
 	rootRes := &simple.RootResolver{}
-	ResolveRootQuery(resolverCtx, rootRes)
+	go ResolveRootQuery(resolverCtx, rootRes)
+	select {
+	case err := <-errCh:
+		t.Fatal(err.GetError())
+	case <-doneCh:
+	}
 }

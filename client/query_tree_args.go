@@ -2,8 +2,8 @@ package client
 
 import (
 	"github.com/graphql-go/graphql/language/ast"
-	"github.com/rgraphql/nion/types"
-	"github.com/rgraphql/nion/varstore"
+	"github.com/rgraphql/magellan/types"
+	"github.com/rgraphql/magellan/varstore"
 	proto "github.com/rgraphql/rgraphql"
 )
 

@@ -5,7 +5,7 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/pkg/errors"
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/types"
 )
 
 // modelBuilder contains state while analyzing the AST.

@@ -7,7 +7,7 @@ import (
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/graphql-go/graphql/language/parser"
 	"github.com/graphql-go/graphql/language/source"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/schema"
 )
 
 func main() {

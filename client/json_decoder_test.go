@@ -5,7 +5,7 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/graphql-go/graphql/language/parser"
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/types"
 	proto "github.com/rgraphql/rgraphql"
 )
 

@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/rgraphql/nion/qtree"
+	"github.com/rgraphql/magellan/qtree"
 	proto "github.com/rgraphql/rgraphql"
 )
 

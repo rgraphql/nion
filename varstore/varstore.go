@@ -3,7 +3,7 @@ package varstore
 import (
 	"sync"
 
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/types"
 	proto "github.com/rgraphql/rgraphql"
 )
 

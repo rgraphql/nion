@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/schema"
 	proto "github.com/rgraphql/rgraphql"
 )
 

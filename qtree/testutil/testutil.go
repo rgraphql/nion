@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/rgraphql/nion/qtree"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/qtree"
+	"github.com/rgraphql/magellan/schema"
 	proto "github.com/rgraphql/rgraphql"
 )
 
@@ -17,8 +17,10 @@ type Person {
 }
 
 type RootQuery {
+    counter: Int
 	allPeople: [Person]
 	names: [String]!
+    singlePerson: Person
 }
 
 schema {

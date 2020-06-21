@@ -6,8 +6,8 @@ import (
 	"github.com/davecgh/go-spew/spew"
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/graphql-go/graphql/language/parser"
-	"github.com/rgraphql/nion/schema"
-	"github.com/rgraphql/nion/types"
+	"github.com/rgraphql/magellan/schema"
+	"github.com/rgraphql/magellan/types"
 	proto "github.com/rgraphql/rgraphql"
 )
 

@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/rgraphql/nion/varstore"
+	"github.com/rgraphql/magellan/varstore"
 )
 
 // qtVarStoreHandler attaches the variable store callbacks to the query tree.

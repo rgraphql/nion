@@ -8,9 +8,9 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/pkg/errors"
-	"github.com/rgraphql/nion/resolver"
-	"github.com/rgraphql/nion/types"
-	"github.com/rgraphql/nion/types/gqlast"
+	"github.com/rgraphql/magellan/resolver"
+	"github.com/rgraphql/magellan/types"
+	"github.com/rgraphql/magellan/types/gqlast"
 	proto "github.com/rgraphql/rgraphql"
 )
 

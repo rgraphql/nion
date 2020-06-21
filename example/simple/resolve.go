@@ -2,13 +2,28 @@ package simple
 
 import (
 	"context"
+	"time"
 
-	"github.com/rgraphql/nion/resolver"
+	"github.com/rgraphql/magellan/resolver"
 )
 
 // RootResolver resolves RootQuery
 type RootResolver struct {
 	personObs resolver.Observable
+}
+
+// GetCounter returns the counter value.
+func (r *RootResolver) GetCounter(ctx context.Context, outCh chan<- int) {
+	var v int
+	for {
+		select {
+		case <-ctx.Done():
+			return
+		case <-time.After(time.Second):
+			v++
+			outCh <- v
+		}
+	}
 }
 
 // GetSinglePerson returns a single person.

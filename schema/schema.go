@@ -5,8 +5,8 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/graphql-go/graphql/language/parser"
-	"github.com/rgraphql/nion/introspect"
-	"github.com/rgraphql/nion/qtree"
+	"github.com/rgraphql/magellan/introspect"
+	"github.com/rgraphql/magellan/qtree"
 	proto "github.com/rgraphql/rgraphql"
 )
 

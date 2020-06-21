@@ -9,7 +9,7 @@ import (
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/pkg/errors"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/schema"
 )
 
 // objectResolver resolves an object and fields selected by the query.

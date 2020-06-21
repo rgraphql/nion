@@ -2,7 +2,7 @@ package encoder
 
 import (
 	"github.com/hashicorp/golang-lru"
-	"github.com/rgraphql/nion/resolver"
+	"github.com/rgraphql/magellan/resolver"
 	"sync"
 )
 

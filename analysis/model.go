@@ -87,7 +87,7 @@ func (m *Model) GenerateResolverFile() (*gast.File, error) {
 				&gast.ImportSpec{
 					Path: &gast.BasicLit{
 						Kind:  token.STRING,
-						Value: `"github.com/rgraphql/nion/resolver"`,
+						Value: `"github.com/rgraphql/magellan/resolver"`,
 					},
 				},
 			},
@@ -141,7 +141,7 @@ func (m *Model) GenerateResolverFile() (*gast.File, error) {
 				&gast.CommentGroup{
 					List: []*gast.Comment{
 						&gast.Comment{
-							Text: "//+build !nion_analyze",
+							Text: "//+build !magellan_analyze",
 						},
 					},
 				},

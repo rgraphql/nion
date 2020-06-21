@@ -4,9 +4,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/rgraphql/nion/varstore"
+	"github.com/rgraphql/magellan/varstore"
 
-	"github.com/rgraphql/nion/qtree"
+	"github.com/rgraphql/magellan/qtree"
 	proto "github.com/rgraphql/rgraphql"
 )
 

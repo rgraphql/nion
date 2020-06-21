@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	. "github.com/rgraphql/nion/qtree"
-	"github.com/rgraphql/nion/qtree/testutil"
-	"github.com/rgraphql/nion/schema"
+	. "github.com/rgraphql/magellan/qtree"
+	"github.com/rgraphql/magellan/qtree/testutil"
+	"github.com/rgraphql/magellan/schema"
 	proto "github.com/rgraphql/rgraphql"
 )
 

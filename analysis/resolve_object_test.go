@@ -3,7 +3,7 @@ package analysis
 import (
 	"testing"
 
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/schema"
 )
 
 const testResolveObject_ResolverCode = `

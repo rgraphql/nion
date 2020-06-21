@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/graphql-go/graphql/language/ast"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/schema"
 	proto "github.com/rgraphql/rgraphql"
 	"golang.org/x/tools/go/loader"
 )

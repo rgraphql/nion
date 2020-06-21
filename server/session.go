@@ -8,11 +8,11 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/rgraphql/nion/encoder"
-	"github.com/rgraphql/nion/qtree"
-	"github.com/rgraphql/nion/resolver"
-	"github.com/rgraphql/nion/result"
-	"github.com/rgraphql/nion/schema"
+	"github.com/rgraphql/magellan/encoder"
+	"github.com/rgraphql/magellan/qtree"
+	"github.com/rgraphql/magellan/resolver"
+	"github.com/rgraphql/magellan/result"
+	"github.com/rgraphql/magellan/schema"
 	proto "github.com/rgraphql/rgraphql"
 )
 

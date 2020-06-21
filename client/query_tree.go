@@ -3,8 +3,8 @@ package client
 import (
 	"sync"
 
-	"github.com/rgraphql/nion/schema"
-	"github.com/rgraphql/nion/varstore"
+	"github.com/rgraphql/magellan/schema"
+	"github.com/rgraphql/magellan/varstore"
 
 	"github.com/graphql-go/graphql/language/ast"
 	"github.com/graphql-go/graphql/language/visitor"
